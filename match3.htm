@@ -1,0 +1,95 @@
+<script language="JavaScript">
+
+    window.addEventListener("keydown",start1)
+
+    var tim1="";
+    var tim2="";
+    var tim3="";
+    var ar_tim=new Array(tim1,tim2,tim3)
+    let ar_strt=new Array('dat1','dat2','dat3')
+    let int_rol=0
+    let int_sts=0
+    //rrrrrrr
+    function start1(elem1) {
+        if(elem1.code=='Space'){
+            let int_loop1=0
+            console.log(int_sts)
+            if(int_rol==1){
+                int_sts=int_sts+1
+                    //int_sts=int_sts+1
+                    console.log("ww")
+                    //clearTimeout(ar_tim[int_sts])
+                    //ar_tim[int_sts]=-1
+                    console.log(int_sts)
+                    if(int_sts>2){
+                        console.log("res")
+                        for(int_loop1=0;int_loop1<ar_strt.length;int_loop1++){
+                            clearTimeout(ar_tim[int_loop1])
+                        }
+                        int_sts=0
+                        int_rol=0   
+                    }
+            }else{
+                //roling
+                if(int_rol==0){
+                    console.log(int_sts)
+                    rol1()
+                    //int_sts=int_sts+1
+                    //col stop
+                }
+            }
+        }
+    }
+
+
+
+    function rol1() {
+        for(int_loop1=int_sts;int_loop1<ar_strt.length;int_loop1++){
+            document.getElementById(ar_strt[int_loop1]).value = Math.floor(Math.random()*10);
+            ar_tim[int_loop1]=setTimeout(rol1,  100);
+        }
+        int_rol=1
+    }
+
+
+
+</script>
+
+
+<style>
+    table, tr, td{
+        border-style:none;
+    }
+</style>
+
+<div style="background-color : #CCC; padding : 20px;">
+    <table style="width:200px;">
+    <tr><td colspan="3">
+    <input type="button" value="START" onClick="start1()" style="width:100%;">
+    </td></tr>
+
+
+    <tr><td>
+    <input type="text" id="dat1" value="0" style="text-align:center;font-size:30px;width:70px;">
+    </td>
+    <td style="width:33%;">
+    <input type="text" id="dat2" value="0" style="text-align:center;font-size:30px;width:70px;">
+    </td>
+    <td style="width:33%;">
+    <input type="text" id="dat3" value="0" style="text-align:center;font-size:30px;width:70px;">
+    </td></tr>
+
+
+    <tr><td>
+    <input type="button" value="STOP" onClick="stop1(0)" style="width:100%;">
+    </td>
+    <td>
+    <input type="button" value="STOP" onClick="stop1(1)" style="width:100%;">
+    </td>
+    <td>
+    <input type="button" value="STOP" onClick="stop1(2)" style="width:100%;">
+    </td></tr>
+
+
+    </table>
+</div>
