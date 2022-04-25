@@ -1,0 +1,141 @@
+<script language="JavaScript">
+
+    window.addEventListener("keydown",start1)
+
+    var tim1="";
+    var tim2="";
+    var tim3="";
+    var ar_tim=new Array(tim1,tim2,tim3)
+    let ar_strt=new Array('dat1','dat2','dat3')
+    let int_sts=3
+    var clc1='';
+
+    var ref1='';
+    //rrrrrrr
+    function start1(elem1) {
+
+        //console.log(int_rol)
+
+        if(int_sts==3 && elem1.code=='ArrowRight'){
+            if(dat5.value>0){
+                dat4.value=parseInt(dat4.value)+1
+                dat5.value=parseInt(dat5.value)-1
+            }
+        }
+        if(int_sts==3 && elem1.code=='ArrowLeft'){
+            if(dat4.value>0){
+                dat4.value=parseInt(dat4.value)-1
+                dat5.value=parseInt(dat5.value)+1
+            }
+        }
+        if(int_sts==3 && elem1.code=='ArrowUp'){
+            if(dat5.value>=10){
+                dat4.value=parseInt(dat4.value)+10
+                dat5.value=parseInt(dat5.value)-10
+            }
+        }
+        if(int_sts==3 && elem1.code=='ArrowDown'){
+            if(dat4.value>=10){
+                dat4.value=parseInt(dat4.value)-10
+                dat5.value=parseInt(dat5.value)+10
+            }
+        }
+
+
+
+        if(elem1.code=='Space'){
+            //let int_loop1=0
+            if(int_sts==3){
+                rol1()
+            }else{
+                clearInterval(ar_tim[int_sts])
+                int_sts=int_sts+1
+                console.log(int_sts)
+                if(int_sts==3){
+
+
+                    //clc1=settimeout(calc1,500)
+                    if(dat1.value==7 && dat1.value==7 && dat1.value==7){
+                        dat4.value=parseInt(dat4.value)*20
+                    }else if(dat1.value==5 && dat2.value==5 && dat3.value==5){
+                        dat4.value=parseInt(dat4.value)*15
+                    }else if(dat1.value==3 && dat2.value==3 && dat3.value==3){
+                        dat4.value=parseInt(dat4.value)*10
+                    }else if(dat1.value==2 && dat2.value==2 && dat3.value==2){
+                        dat4.value=parseInt(dat4.value)*8
+                    }else if(dat1.value==1 && dat2.value==1 && dat3.value==1){
+                        dat4.value=parseInt(dat4.value)*4
+                    }else if(dat1.value==1 && dat2.value==1 || dat1.value==1 && dat3.value==1 || dat2.value==1 && dat3.value==1){
+                        dat4.value=parseInt(dat4.value)*2
+                    }else if(dat1.value==1 || dat2.value==1 || dat3.value==1){
+                        dat4.value=dat4.value
+                    }else if(dat1.value==0 && dat1.value==0 && dat1.value==0){
+                        dat4.value=parseInt(dat4.value)*20
+                    }else{
+                        dat4.value=0
+                    }
+
+
+
+
+                    ref1=setInterval(refnd,100)
+                    refnd()
+
+                }
+
+            }
+        }
+    }
+
+
+    function refnd(){
+        if(dat4.value==0){
+            clearInterval(ref1)
+        }else{
+            dat4.value=parseInt(dat4.value)-10
+            dat5.value=parseInt(dat5.value)+10
+        }
+
+    }
+
+    function rol1() {
+        console.log("d")
+        int_sts=0
+        for(int_loop1=int_sts;int_loop1<ar_strt.length;int_loop1++){
+            ar_tim[int_loop1]=setInterval(put1,  100);
+        }
+    }
+
+    function put1() {
+        let str_rel=new Array(0,1,2,3,5,7)
+        const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+        for(int_loop1=int_sts;int_loop1<ar_strt.length;int_loop1++){
+            document.getElementById(ar_strt[int_loop1]).value = str_rel[randRange(0,5)];
+        }
+    }
+
+
+
+
+</script>
+
+<style>
+    input{border-style:none;width:20px;}
+    .fnt_s10{font-size:10px;}
+</style>
+<div>
+    <input type="text" id="dat1" value="0">
+    <input type="text" id="dat2" value="0">
+    <input type="text" id="dat3" value="0">-
+    <input type="text" id="dat4" value="0">-
+    <input type="text" id="dat5" value="30">
+    <span class="fnt_s10"><br />
+1-- 1<br />
+11- 2<br />
+111 4<br />
+222 8<br />
+333 10<br />
+555 15<br />
+777 20<br />
+000 ed</span>
+</div>
