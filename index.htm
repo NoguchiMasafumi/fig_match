@@ -1,0 +1,137 @@
+<script language="JavaScript">
+    window.addEventListener("keydown",start1)
+    var tim1="";
+    var tim2="";
+    var tim3="";
+    var ar_tim=new Array(tim1,tim2,tim3)
+    let ar_strt=new Array('dat1','dat2','dat3')
+    let int_sts=3
+    var ref1='';
+    let int_opt=0
+    let ar_proc=new Array()
+    var str_rel=new Array(0,1,2,3,5,7)
+
+    function start1(elem1) {
+
+
+        if(int_sts==3){
+            if(elem1.code=='ArrowRight' || elem1=='rig'){
+                ar_proc=new Array(dat5.value,0,1,-1)
+            }else if(elem1.code=='ArrowLeft' || elem1=='lef'){
+                ar_proc=new Array(dat4.value,0,-1,1)
+            }else if(elem1.code=='ArrowUp' || elem1=='up'){
+                ar_proc=new Array(dat5.value,10,10,-10)
+            }else if(elem1.code=='ArrowDown' || elem1=='dwn'){
+                ar_proc=new Array(dat4.value,10,-10,10)
+            }
+            if(ar_proc.length>0){
+                if(ar_proc[0]>=parseInt(ar_proc[1])){
+                    dat4.value=parseInt(dat4.value)+parseInt(ar_proc[2])
+                    dat5.value=parseInt(dat5.value)+parseInt(ar_proc[3])
+                }
+            }
+        }
+        if(elem1.code=='Space' || elem1=='act'){
+            if(int_sts==3){
+                if(dat4.value>0){
+                    rol1()
+                }
+            }else{
+                clearInterval(ar_tim[int_sts])
+                int_sts=int_sts+1
+                if(int_sts==3){
+                    if(dat1.value==7 && dat2.value==7 && dat3.value==7){int_opt=20
+                    }else if(dat1.value==5 && dat2.value==5 && dat3.value==5){int_opt=15
+                    }else if(dat1.value==3 && dat2.value==3 && dat3.value==3){int_opt=10
+                    }else if(dat1.value==2 && dat2.value==2 && dat3.value==2){int_opt=8
+                    }else if(dat1.value==1 && dat2.value==1 && dat3.value==1){int_opt=4
+                    }else if((dat1.value==1 && dat2.value==1) || (dat1.value==1 && dat3.value==1) || (dat2.value==1 && dat3.value==1)){int_opt=2
+                    }else if(dat1.value==1 || dat2.value==1 || dat3.value==1){int_opt=1
+                    }else if(dat1.value==0 && dat2.value==0 && dat3.value==0){int_opt=0
+                        int_sts=4
+                        alert("END")
+                    }else{int_opt=0
+                    }
+                    dat4.value=parseInt(dat4.value)*int_opt
+                    if(int_sts!=4){
+                        ref1=setInterval(refnd,100)
+                        refnd()
+                    }
+                }
+            }
+        }
+    }
+
+    function refnd(){
+        if(dat4.value==0){
+            clearInterval(ref1)
+        }else{
+            dat4.value=parseInt(dat4.value)-1
+            dat5.value=parseInt(dat5.value)+1
+        }
+    }
+
+    function rol1() {
+        //console.log("d")
+        int_sts=0
+        for(int_loop1=int_sts;int_loop1<ar_strt.length;int_loop1++){
+            ar_tim[int_loop1]=setInterval(put1,  200);
+        }
+    }
+
+    function put1() {
+        const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+        for(int_loop1=int_sts;int_loop1<ar_strt.length;int_loop1++){
+            document.getElementById(ar_strt[int_loop1]).value = str_rel[randRange(0,5)];
+        }
+    }
+</script>
+
+<style>
+    .inp1{border-style:none;width:20px;}
+    .inp2{border-style:none;width:30px;}
+    .inp3{border-style:none;width:30px;}
+    .inp4{border-style:none;width:60px;height:40px;}
+    .fnt_s10{font-size:10px;}
+    .over_flw_hid{overflow: hidden;}
+    .flt_lef{float:left;}
+    .mar_r10{margin-right:10px}
+</style>
+
+<div class="over_flw_hid fnt_s10">
+    <div class="flt_lef mar_r10">
+        1-- 1<br />
+        11- 2<br />
+        111 4<br />
+        222 8<br />
+    </div>
+    <div class="flt_lef">
+        333 10<br />
+        555 15<br />
+        777 20<br />
+        000 ed
+    </div>
+</div>
+
+<div>
+    <input type="text" id="dat1" value="0" class="inp1">
+    <input type="text" id="dat2" value="0" class="inp1">
+    <input type="text" id="dat3" value="0" class="inp1"><br />
+    <input type="text" id="dat4" value="0" class="inp2">-
+    <input type="text" id="dat5" value="300" class="inp2">
+</div>
+
+<div class="over_flw_hid fnt_s10">
+    <div class="flt_lef">
+        <input type="button" value="▲" onclick="start1('rig')" class="inp3"><br />
+        1<br />
+        <input type="button" value="▼" onclick="start1('lef')" class="inp3">
+    </div>
+
+    <div class="flt_lef">
+        <input type="button" value="▲" onclick="start1('up')" class="inp3"><br />
+        10<br />
+        <input type="button" value="▼" onclick="start1('dwn')" class="inp3">
+    </div>
+</div>
+<input type="button" value="●" onclick="start1('act')" class="inp4">
