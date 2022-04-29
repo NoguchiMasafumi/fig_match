@@ -1,0 +1,113 @@
+<style>
+	 .bx1{
+		height:20px; 
+		width:10px;border:1px solid rgb(221, 221, 221);
+	 
+	}
+	.bx2{
+		position: absolute;
+		transform-origin: 0 150px;
+
+	}
+
+
+	 
+</style>
+	<div style="position:relative;margin-left:300px;">
+		<div class="bx2"><div class="val1">0</div><div id="lump0" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">30</div><div id="lump1" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">2</div><div id="lump2" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">4</div><div id="lump3" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">8</div><div id="lump4" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">12</div><div id="lump5" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">30</div><div id="lump6" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">2</div><div id="lump7" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">4</div><div id="lump8" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">8</div><div id="lump9" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">30</div><div id="lump10" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">2</div><div id="lump11" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">30</div><div id="lump12" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">2</div><div id="lump13" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">4</div><div id="lump14" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">6</div><div id="lump15" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">8</div><div id="lump16" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">12</div><div id="lump17" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">20</div><div id="lump18" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">2</div><div id="lump19" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">4</div><div id="lump20" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">6</div><div id="lump21" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">8</div><div id="lump22" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">30</div><div id="lump23" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">10</div><div id="lump24" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">12</div><div id="lump25" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">4</div><div id="lump26" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">6</div><div id="lump27" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">8</div><div id="lump28" class="bx1"></div></div>
+		<div class="bx2"><div class="val1">10</div><div id="lump29" class="bx1"></div></div>
+	</div>
+
+<script>
+	var int_spd=20
+	var intv_id=setInterval(lump,int_spd)
+	var rt1=1
+	var indx_1=0
+	var indx_bef=29
+	var int_max1=indx_bef+1
+	var int_dg=0
+	var int_loop1=0
+	var int_get1=0
+
+	for(int_loop1=0;int_loop1<indx_bef+1;int_loop1++){
+		int_dg=360/(indx_bef+1)
+		//console.log(int_dg*int_loop1)
+		//document.getElementById("lump"+int_loop1).style.transform="rotate("+int_dg*int_loop1+"deg)"
+		document.getElementsByClassName("bx2")[int_loop1].style.transform="rotate("+int_dg*int_loop1+"deg)"
+		if(int_loop1>7&&int_loop1<23){
+			document.getElementsByClassName("bx2")[int_loop1].getElementsByClassName("val1")[0].style.transform="rotate(180deg)"
+
+
+		}
+		
+
+	}
+	
+	
+	
+	function lump(){
+		//console.log(indx_1)
+		
+		document.getElementById("lump"+indx_bef).innerText=""
+		
+		document.getElementById("lump"+indx_1).innerText="o"
+		int_get1=document.getElementsByClassName("bx2")[indx_1].getElementsByClassName("val1")[0].innerText
+
+		indx_1=indx_1+1
+		if(indx_1==int_max1){indx_1=0}
+
+		indx_bef=indx_bef+1
+		if(indx_bef==int_max1){indx_bef=0}
+		
+
+
+	}
+	function act1(ky1){
+		//console.log(ky1.code)
+		if(ky1.code=="Space"&&rt1==1){
+			clearInterval(intv_id)
+			console.log(int_get1)
+
+			rt1=0
+		}else if(ky1.code=="Space"&&rt1==0){
+			intv_id=setInterval(lump,int_spd)
+			rt1=1
+		}
+
+
+
+
+	}
+
+	window.addEventListener("keydown",act1)
+
+
+</script>
