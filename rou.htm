@@ -20,10 +20,10 @@
 			width:160px;
 		}
 
-		.inp1{border-style:none;width:46px;height:40px;}
+		.inp1{border-style:none;width:46px;height:80px;}
 		.inp2{border-style:none;width:30px;}
 		.inp3{border-style:none;width:30px;}
-		.inp4{border-style:none;width:60px;height:40px;}
+		.inp4{border-style:none;width:305px;height:80px;}
 
 		.inp_bet{width:46px;}
 		#out1{width:305px;}
@@ -115,16 +115,16 @@
 		<input type="button" value="8" class="inp1" onclick="bet(4,8)">
 		<input type="button" value="10" class="inp1" onclick="bet(5,10)">
 		<input type="button" value="30" class="inp1" onclick="bet(6,30)"><br />
-		<input type="text" id="out1" value="100"><br />
+		<input type="text" id="out1" value="50"><br />
 
-		<input type="button" value="●" onclick="act1('act')" class="inp4">
+		<input type="button" value="●" onclick="act1('act')" class="inp4" id="inp4">
 
 	<script>
 
 	//30 2 8 4 2 10 2 4 8 2 6 2 4 10 2 4 6 0 4 8 2 6 2 4 2 10 2 6 4 2    6 2 8 2 4 0
 
 		var ref=""
-		var int_spd=20
+		var int_spd=10
 		var intv_id=""
 		var rt1=0
 		var indx_1=0
@@ -207,6 +207,11 @@
 		}
 		function act1(ky1){
 			//console.log(ky1.code)
+			if(ky1.code=="Space"){
+				inp4.focus()
+
+			}
+
 			if((ky1.code=="Space"||ky1=="act")&&rt1==1){
 				clearInterval(intv_id)
 				//console.log(int_get1)
@@ -220,11 +225,8 @@
 				if(int_get1==bet5_0.value){int_pre_out=parseInt(eval("bet5_"+(bet5_lv-1)).value)}
 				if(int_get1==bet6_0.value){int_pre_out=parseInt(eval("bet6_"+(bet6_lv-1)).value)}
 
-				ref1=setInterval(refnd,500)
+				ref1=setInterval(refnd,100)
 				//refnd()
-
-
-
 
 
 				int_bet=0
