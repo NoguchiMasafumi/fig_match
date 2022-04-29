@@ -45,6 +45,7 @@
 		<div class="bx2"><div class="val1">8</div><div id="lump28" class="bx1"></div></div>
 		<div class="bx2"><div class="val1">10</div><div id="lump29" class="bx1"></div></div>
 	</div>
+	<input type="button" value="●" onclick="act1('act')" class="inp4">
 
 <script>
 	var int_spd=20
@@ -92,12 +93,12 @@
 	}
 	function act1(ky1){
 		//console.log(ky1.code)
-		if(ky1.code=="Space"&&rt1==1){
+		if((ky1.code=="Space"||ky1=="act")&&rt1==1){
 			clearInterval(intv_id)
 			console.log(int_get1)
 
 			rt1=0
-		}else if(ky1.code=="Space"&&rt1==0){
+		}else if((ky1.code=="Space"||ky1=="act")&&rt1==0){
 			intv_id=setInterval(lump,int_spd)
 			rt1=1
 		}
