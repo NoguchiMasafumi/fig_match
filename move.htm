@@ -1,0 +1,139 @@
+<style>
+.fig_w{
+    width:30px;
+    height:30px;
+    border-width:1px;
+    border-style:solid;
+    border-color:#efefef;
+    float:left;
+text-align:center;
+font-size:24px;}
+#field1{
+    width:128px;
+height:256px;
+}
+
+#mov1{
+    position:relative;
+    top:128px;}
+
+</style>
+
+<script>
+
+
+
+    var mov1 = new Object();
+mov1.x = 0;
+mov1.y = 0;
+mov1.move = 0;
+ 
+//押されたキーを入れておくための変数
+var pressed_key = '';
+ 
+//キーボードのオブジェクトを作成
+var key = new Object();
+key.up = false;
+key.down = false;
+key.right = false;
+key.left = false;
+
+
+
+
+
+    //メインループ
+    function main() {
+    //キーボードが押された時、keydownfunc関数（かんすう）を呼び出す
+    addEventListener( "keydown", keydownfunc );
+    //キーボードがはなされた時、keyupfunc関数（かんすう）を呼び出す
+    addEventListener( "keyup", keyupfunc );
+
+    //mov1.moveが0のとき、りこちゃんが移動する準備（じゅんび）をする
+    if ( mov1.move === 0 ) {
+        if ( key.left === true ) {
+            mov1.move = 64;
+            pressed_key = 'left';
+        }
+        if ( key.up === true ) {
+            mov1.move = 64;
+            pressed_key = 'up';
+        }
+        if ( key.right === true ) {
+            mov1.move = 64;
+            pressed_key = 'right';
+        }
+        if ( key.down === true ) {
+            mov1.move = 64;
+            pressed_key = 'down';
+        }
+    }
+
+    //mov1.moveが0より大きいとき、りこちゃんが移動（いどう）する
+    if (mov1.move > 0) {
+        mov1.move -= 4;
+        if ( pressed_key === 'left' ) mov1.x -= 4;
+        if ( pressed_key === 'up' ) mov1.y -= 4;
+        if ( pressed_key === 'right' ) mov1.x += 4;
+        if ( pressed_key === 'down' ) mov1.y += 4;
+    }
+
+    //りこちゃんの画像の位置（いち）を反映（はんえい）させる
+    document.getElementById( 'mov1' ).style.top = mov1.y + "px";
+    document.getElementById( 'mov1' ).style.left = mov1.x + "px";
+
+    //main関数（かんすう）、つまり自分自身の関数を呼び出すことでループさせる。
+    requestAnimationFrame(main);
+    }
+
+
+
+
+
+    function keydownfunc( event ) {
+        var key_code = event.keyCode;
+        if( key_code === 37 ) key.left = true;		//「左ボタン」が押されたとき、key.leftをtrueにする
+        if( key_code === 38 ) key.up = true;		//「上ボタン」が押されたとき、key.upをtrueにする
+        if( key_code === 39 ) key.right = true;		//「右ボタン」が押されたとき、key.rightをtrueにする
+        if( key_code === 40 ) key.down = true;		//「下ボタン」が押されたとき、key.downをtrueにする
+    }
+
+
+//キーボードがはなされたときに呼び出される関数
+function keyupfunc( event ) {
+	var key_code = event.keyCode;
+	if( key_code === 37 ) key.left = false;		//「左ボタン」がはなされたとき、key.leftをfalseにする
+	if( key_code === 38 ) key.up = false;  		//「上ボタン」がはなされたとき、key.upをfalseにする
+	if( key_code === 39 ) key.right = false		//「右ボタン」がはなされたとき、key.rightをfalseにする;
+	if( key_code === 40 ) key.down = false;		//「下ボタン」がはなされたとき、key.downをfalseにする
+}
+
+</script>
+
+<html>
+
+
+
+<body onload="main()">
+<div id="field1">
+    <img src="img/hikk.gif" id="mov1" style="width:64px;">
+</div>
+
+
+<div id="field1">
+    <img src="img/New Piskel (3).gif" id="mov1" style="width:64px;">
+</div>
+
+
+
+
+
+
+
+<div id="fig1" class="fig_w">1</div>
+<div id="fig2" class="fig_w">3</div>
+<div id="fig3" class="fig_w">6</div>
+<div id="fig4" class="fig_w">2</div>
+
+</body>
+</html>
