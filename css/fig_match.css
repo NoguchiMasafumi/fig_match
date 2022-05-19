@@ -213,7 +213,7 @@ details .summary_contents{
     display:block;
 }
 
-
+.ctrl_btn{font-size:36px;}
 
 /********************************** for pc? where is for tablet!! **************************/
 @media screen and (min-width:415px){
