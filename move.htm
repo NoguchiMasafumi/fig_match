@@ -8,14 +8,19 @@
     float:left;
 text-align:center;
 font-size:24px;}
-#field1{
-    width:128px;
-height:256px;
+#field1{position:relative;
+    background-color:rgb(233,233,233);
+    width:512px;
+height:576px;
 }
 
 #mov1{
-    position:relative;
-    top:128px;}
+position:absolute;
+top:384px;}
+
+#coin1{position:absolute;top:64px;left:192px;}
+#dimd1{position:absolute;top:128px;left:64px;}
+
 
 </style>
 
@@ -115,13 +120,13 @@ function keyupfunc( event ) {
 
 
 <body onload="main()">
+
 <div id="field1">
     <img src="img/hikk.gif" id="mov1" style="width:64px;">
-</div>
-
-
-<div id="field1">
+    <img src="img/New Piskel (1).gif" id="coin1" style="width:64px;">
+    <img src="img/New Piskel (2).gif" id="dimd1" style="width:64px;">
     <img src="img/New Piskel (3).gif" id="mov1" style="width:64px;">
+
 </div>
 
 
@@ -130,10 +135,8 @@ function keyupfunc( event ) {
 
 
 
-<div id="fig1" class="fig_w">1</div>
-<div id="fig2" class="fig_w">3</div>
-<div id="fig3" class="fig_w">6</div>
-<div id="fig4" class="fig_w">2</div>
+
+
 
 </body>
 </html>
