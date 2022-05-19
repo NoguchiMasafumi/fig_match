@@ -4,6 +4,7 @@ body{margin:0px;padding:0px;}
 
 /**************************** size *********************************************/
 .w100p{width:100%;}
+.w80p{width:90%;}
 
 .w80p{width:80%;}
 .w70p{width:70%;}
@@ -193,19 +194,7 @@ details .summary_contents{
 
 
 /**************************** special *********************************************/
-.gm_icon{width:250px;height:250px;
-    /*border-width:1px;
-    border-style:solid;
-    border-color:#000000;*/
-    border-radius: 41px;
-}
-@supports (mask-image: paint(smooth-corners)) {
-    .gm_icon.is-loaded {
-        border-radius: 0;
-        mask-image: paint(smooth-corners);
-        --smooth-corners: 6.9;
-    }
-}
+
 
 .icon_box{
     margin-bottom:24px;
@@ -222,8 +211,19 @@ details .summary_contents{
     }
     .inp1{border-style:none;width:50px;font-size:56px;}
 
-
+    .gm_icon{width:250px;height:250px;
+        border-radius: 41px;
+    }
+    @supports (mask-image: paint(smooth-corners)) {
+        .gm_icon.is-loaded {
+            border-radius: 0;
+            mask-image: paint(smooth-corners);
+            --smooth-corners: 6.9;
+        }
+    }
 }
+
+
 
 
 /********************************** for pc? where is for tablet!! **************************/
@@ -240,7 +240,19 @@ details .summary_contents{
     .inp1{border-style:none;width:100px;font-size:56px;}
     /*.inp1{border-style:none;width:20px;}*/
     .inp2{border-style:none;width:30px;}
+
+    .gm_icon{width:128px;height:128px;
+        border-radius: 20px;
+    }
+    @supports (mask-image: paint(smooth-corners)) {
+        .gm_icon.is-loaded {
+            border-radius: 0;
+            mask-image: paint(smooth-corners);
+            --smooth-corners: 10;
+        }
+    }
     
+
 }
 
 
