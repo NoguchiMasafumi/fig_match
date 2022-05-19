@@ -209,10 +209,13 @@ details .summary_contents{
     .cont_cont{
         width:1024px;
     }
+    .mar_top_msg{margin:32px 32px 32px 32px;}
+    .pad_top_msg{padding:24px 24px 24px 24px;}
     .inp1{border-style:none;width:50px;font-size:56px;}
 
     .gm_icon{width:250px;height:250px;
         border-radius: 41px;
+        background-size: 250px 250px;
     }
     @supports (mask-image: paint(smooth-corners)) {
         .gm_icon.is-loaded {
@@ -236,13 +239,16 @@ details .summary_contents{
     .cont_cont{
         width:calc(100vw - 48px);
     }
+    .mar_top_msg{margin:8px 32px 24px 32px;}
+    .pad_top_msg{padding:8px 24px 8px 24px;}
 
     .inp1{border-style:none;width:100px;font-size:56px;}
     /*.inp1{border-style:none;width:20px;}*/
     .inp2{border-style:none;width:30px;}
 
-    .gm_icon{width:128px;height:128px;
+    .gm_icon{width:96px;height:96px;
         border-radius: 20px;
+        background-size: 96px 96px;
     }
     @supports (mask-image: paint(smooth-corners)) {
         .gm_icon.is-loaded {
