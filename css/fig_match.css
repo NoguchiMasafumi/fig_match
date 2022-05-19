@@ -237,7 +237,7 @@ details .summary_contents{
         width:calc(100vw - 48px);
     }
 
-    .inp1{border-style:none;width:100px;font-size:128px;}
+    .inp1{border-style:none;width:100px;font-size:56px;}
     /*.inp1{border-style:none;width:20px;}*/
     .inp2{border-style:none;width:30px;}
     
