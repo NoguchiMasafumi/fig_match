@@ -38,10 +38,9 @@
 		.inp_rou1{border-style:none;width:46px;height:36px;margin:8px 0px 8px 0px;font-size:24px;}
 		.inp_rou2{border-style:none;width:30px;}
 		.inp_rou3{border-style:none;width:30px;}
-		.inp_rou4{border-style:none;width:305px;height:36px;;margin-top:8px;;font-size:24px;}
+		.inp_rou4{border-style:none;height:36px;;margin:8px 0px 8px 0px;;font-size:24px;}
 
 		.inp_bet{width:46px;}
-		#out1{width:305px;}
 
 		.over_flw_hid{overflow: hidden;}
 		.mar_r10{margin-right:10px}
@@ -96,46 +95,62 @@
 
 		</div>
 
-		<input type="text" id="bet1_3" class="inp_bet">
-		<input type="text" id="bet2_3" class="inp_bet">
-		<input type="text" id="bet3_3" class="inp_bet">
-		<input type="text" id="bet4_3" class="inp_bet">
-		<input type="text" id="bet5_3" class="inp_bet">
-		<input type="text" id="bet6_3" class="inp_bet">
-		<br />
-		<input type="text" id="bet1_2" class="inp_bet">
-		<input type="text" id="bet2_2" class="inp_bet">
-		<input type="text" id="bet3_2" class="inp_bet">
-		<input type="text" id="bet4_2" class="inp_bet">
-		<input type="text" id="bet5_2" class="inp_bet">
-		<input type="text" id="bet6_2" class="inp_bet">
-		<br />
-		<input type="text" id="bet1_1" class="inp_bet">
-		<input type="text" id="bet2_1" class="inp_bet">
-		<input type="text" id="bet3_1" class="inp_bet">
-		<input type="text" id="bet4_1" class="inp_bet">
-		<input type="text" id="bet5_1" class="inp_bet">
-		<input type="text" id="bet6_1" class="inp_bet">
-		<br />
-		<input type="text" id="bet1_0" class="inp_bet">
-		<input type="text" id="bet2_0" class="inp_bet">
-		<input type="text" id="bet3_0" class="inp_bet">
-		<input type="text" id="bet4_0" class="inp_bet">
-		<input type="text" id="bet5_0" class="inp_bet">
-		<input type="text" id="bet6_0" class="inp_bet">
-		<br />
+		<div class="rou_w">
+			<input type="text" id="bet1_3" class="inp_bet">
+			<input type="text" id="bet2_3" class="inp_bet">
+			<input type="text" id="bet3_3" class="inp_bet">
+			<input type="text" id="bet4_3" class="inp_bet">
+			<input type="text" id="bet5_3" class="inp_bet">
+			<input type="text" id="bet6_3" class="inp_bet">
+			<br />
+			<input type="text" id="bet1_2" class="inp_bet">
+			<input type="text" id="bet2_2" class="inp_bet">
+			<input type="text" id="bet3_2" class="inp_bet">
+			<input type="text" id="bet4_2" class="inp_bet">
+			<input type="text" id="bet5_2" class="inp_bet">
+			<input type="text" id="bet6_2" class="inp_bet">
+			<br />
+			<input type="text" id="bet1_1" class="inp_bet">
+			<input type="text" id="bet2_1" class="inp_bet">
+			<input type="text" id="bet3_1" class="inp_bet">
+			<input type="text" id="bet4_1" class="inp_bet">
+			<input type="text" id="bet5_1" class="inp_bet">
+			<input type="text" id="bet6_1" class="inp_bet">
+			<br />
+			<input type="text" id="bet1_0" class="inp_bet">
+			<input type="text" id="bet2_0" class="inp_bet">
+			<input type="text" id="bet3_0" class="inp_bet">
+			<input type="text" id="bet4_0" class="inp_bet">
+			<input type="text" id="bet5_0" class="inp_bet">
+			<input type="text" id="bet6_0" class="inp_bet">
+			<br />
 
 
+			<input type="button" value="2" class="inp_rou1" onclick="bet(1,2)">
+			<input type="button" value="4" class="inp_rou1" onclick="bet(2,4)">
+			<input type="button" value="6" class="inp_rou1" onclick="bet(3,6)">
+			<input type="button" value="8" class="inp_rou1" onclick="bet(4,8)">
+			<input type="button" value="10" class="inp_rou1" onclick="bet(5,10)">
+			<input type="button" value="30" class="inp_rou1" onclick="bet(6,30)"><br />
+			
+			<input type="button" value="●" onclick="act1('act')" class="inp_rou4 pad_a0 w100p" id="inp4">
 
-		<input type="button" value="2" class="inp_rou1" onclick="bet(1,2)">
-		<input type="button" value="4" class="inp_rou1" onclick="bet(2,4)">
-		<input type="button" value="6" class="inp_rou1" onclick="bet(3,6)">
-		<input type="button" value="8" class="inp_rou1" onclick="bet(4,8)">
-		<input type="button" value="10" class="inp_rou1" onclick="bet(5,10)">
-		<input type="button" value="30" class="inp_rou1" onclick="bet(6,30)"><br />
-		<input type="text" id="out1" value="50"><br />
+			<div>
+				<div class="flt_lef">Get
+					<input type="text" id="pre_out" value="0" class="w80"><br />
+				</div>
 
-		<input type="button" value="●" onclick="act1('act')" class="inp_rou4" id="inp4">
+
+				<div class="flt_rig ov_f_hid">
+					
+					<div class="flt_lef">Your Points</div>
+					<div id="your_point" class="w80 bor_a_w1 bor_c06 flt_lef">0</div>
+				</div>
+			</div>
+
+
+		</div>
+
 	</div>
 
 
@@ -154,6 +169,7 @@
 		var int_loop1=0
 		var int_get1=0
 		var int_bet=0
+		var str_blnk_inp=""
 		for(int_loop1=0;int_loop1<indx_bef+1;int_loop1++){
 			int_dg=360/(indx_bef+1)
 			//console.log(int_dg*int_loop1)
@@ -178,10 +194,16 @@
 		var bet6_lv=0
 
 		function bet(tgt,val){
-			if(out1.value>0){
+
+			console.log(document.getElementById("your_point").innerText)
+
+			var tgt_id=document.getElementById("your_point").innerText
+
+
+			if(parseInt(document.getElementById("your_point").innerText)>0){
 
 				if (eval("bet"+tgt+"_lv")<4){
-					out1.value=parseInt(out1.value-1)
+					document.getElementById("your_point").innerText=parseInt(document.getElementById("your_point").innerText)-1
 					int_lv=eval("bet"+tgt+"_lv")
 					eval("bet"+tgt+"_"+int_lv).value=parseInt(val*(int_lv+1))
 
@@ -238,14 +260,14 @@
 				//console.log(bet1_0.value)
 				//console.log("---"+eval("bet1_"+(bet1_lv-1)).value+"---")
 				int_pre_out=0
-				if(int_get1==bet1_0.value){int_pre_out=parseInt(eval("bet1_"+(bet1_lv-1)).value)}
-				if(int_get1==bet2_0.value){int_pre_out=parseInt(eval("bet2_"+(bet2_lv-1)).value)}
-				if(int_get1==bet3_0.value){int_pre_out=parseInt(eval("bet3_"+(bet3_lv-1)).value)}
-				if(int_get1==bet4_0.value){int_pre_out=parseInt(eval("bet4_"+(bet4_lv-1)).value)}
-				if(int_get1==bet5_0.value){int_pre_out=parseInt(eval("bet5_"+(bet5_lv-1)).value)}
-				if(int_get1==bet6_0.value){int_pre_out=parseInt(eval("bet6_"+(bet6_lv-1)).value)}
-
-				ref1=setInterval(refnd,100)
+				if(int_get1==bet1_0.value){int_pre_out=parseInt(eval("bet1_"+(bet1_lv-1)).value);str_blnk_inp="bet1_";}
+				if(int_get1==bet2_0.value){int_pre_out=parseInt(eval("bet2_"+(bet2_lv-1)).value);str_blnk_inp="bet2_";}
+				if(int_get1==bet3_0.value){int_pre_out=parseInt(eval("bet3_"+(bet3_lv-1)).value);str_blnk_inp="bet3_";}
+				if(int_get1==bet4_0.value){int_pre_out=parseInt(eval("bet4_"+(bet4_lv-1)).value);str_blnk_inp="bet4_";}
+				if(int_get1==bet5_0.value){int_pre_out=parseInt(eval("bet5_"+(bet5_lv-1)).value);str_blnk_inp="bet5_";}
+				if(int_get1==bet6_0.value){int_pre_out=parseInt(eval("bet6_"+(bet6_lv-1)).value);str_blnk_inp="bet6_";}
+				document.getElementById("pre_out").value=int_pre_out
+				ref1=setInterval(refnd,500)
 				//refnd()
 
 
@@ -272,16 +294,39 @@
 
 		function refnd(){
 			console.log(int_pre_out)
+			var int_loop1=0
 			if(int_pre_out==0){
 				clearInterval(ref1)
+				if(str_blnk_inp!=""){
+					for(int_loop1=0;int_loop1<4;int_loop1++){	
+						document.getElementById(str_blnk_inp+int_loop1).style.borderColor=""
+					}
+				}
 				for(int_loop1=0;int_loop1<4;int_loop1++){
 					for(int_loop2=1;int_loop2<7;int_loop2++){
 						document.getElementById("bet"+int_loop2+"_"+int_loop1).value=""
 					}
 				}
 			}else{
+				var tgt_bx=document.getElementById(str_blnk_inp+"0")
+				
+				if(document.getElementById(str_blnk_inp+"0").style.borderColor.length==0){
+					for(int_loop1=0;int_loop1<4;int_loop1++){	
+						document.getElementById(str_blnk_inp+int_loop1).style.borderColor="rgb(255, 0, 0)"
+					}
+				}else{
+					for(int_loop1=0;int_loop1<4;int_loop1++){	
+						document.getElementById(str_blnk_inp+int_loop1).style.borderColor=""
+					}
+				}
+
+
 				int_pre_out=parseInt(int_pre_out)-1
-				out1.value=parseInt(out1.value)+1
+				document.getElementById("your_point").innerText=parseInt(document.getElementById("your_point").innerText)+1
+				document.getElementById("pre_out").value=int_pre_out
+
+
+
 			}
 		}
 

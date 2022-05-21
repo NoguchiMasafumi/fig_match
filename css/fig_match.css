@@ -18,6 +18,9 @@ body{margin:0px;padding:0px;}
 .w200{width:200px;}
 .w448{width:448px;}
 .w320{width:320px;}
+.w80{width:80px;}
+.w50{width:50px;}
+.w30{width:30px;}
 
 .h50{height:50px;}
 .h60{height:60px;}
@@ -25,6 +28,7 @@ body{margin:0px;padding:0px;}
 .mar_l_at{margin-left:auto;}
 .mar_r_at{margin-right:auto;}
 
+.mar_a8{margin:8px}
 .mar_a32{margin:32px}
 
 .mar_t12{margin-top:12px;}
@@ -44,14 +48,15 @@ body{margin:0px;padding:0px;}
 .mar_b12{margin-bottom:12px;}
 .mar_b14{margin-bottom:14px;}
 .mar_b15{margin-bottom:15px;}
+.mar_b16{margin-bottom:16px;}
 .mar_b24{margin-bottom:24px;}
 .mar_b32{margin-bottom:32px;}
 
 .mar_l24{margin-left:24px;}
 .mar_l50{margin-left:50px;}
 
+.pad_a0{padding:0px;}
 .pad_a32{padding:32px;}
-
 .pad_l48{padding-left:48px;}
 
 
@@ -83,6 +88,9 @@ a{text-decoration:none;color:#000000;}
 
 .fnt_c13{color:rgb(230,152,152);}
 .fnt_c17{color:rgb(212,39,39);}
+.fnt_c18{color:rgb(177, 39, 4)}
+
+
 
 .bg_c00{background-color: rgb(255, 255, 255);}
 .bg_c01{background-color: rgb(233, 237, 241);}
@@ -90,8 +98,11 @@ a{text-decoration:none;color:#000000;}
 .bg_c17{background-color: rgb(212,39,39);}
 
 .bor_c00{border-color:rgb(255, 255, 255);}
+.bor_c015{border-color:rgb(230, 230, 230);}
 .bor_c01{border-color:rgb(233, 237, 241);}
 .bor_c03{border-color:rgb(161, 177, 192);}
+.bor_c06{border-color:rgb(118, 118, 118);}
+
 .bor_c17{border-color: rgb(212,39,39);}
 
 .btn_c06{background-color: rgb(221, 221, 255);}
@@ -101,7 +112,10 @@ a{text-decoration:none;color:#000000;}
 
 /**************************** position *********************************************/
 .flt_lef{float:left;}
+.flt_rig{float:right;}
 .tex_cen{text-align:center;}
+.tex_rig{text-align:right;}
+
 .ov_f_no{overflow: hidden;}
 .ov_f_hid{overflow: hidden;}
 
@@ -202,7 +216,13 @@ details .summary_contents{
     display:block;
 }
 
+.sp_item{width:240px;height:240px;
+    background-color:rgb(248, 248, 248);
+}
+
 .ctrl_btn{font-size:36px;}
+.rou_w{width:320px;}
+
 
 /********************************** for pc? where is for tablet!! **************************/
 @media screen and (min-width:415px){
@@ -224,6 +244,8 @@ details .summary_contents{
             --smooth-corners: 6.9;
         }
     }
+
+    .banr1 img{width:758px;}
 }
 
 
