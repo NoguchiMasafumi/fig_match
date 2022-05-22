@@ -11,6 +11,7 @@ body{margin:0px;padding:0px;}
 .w60p{width:60%;}
 .w50p{width:50%;}
 .w40p{width:40%;}
+.w33p{width:33%;}
 .w30p{width:30%;}
 
 
@@ -33,6 +34,7 @@ body{margin:0px;padding:0px;}
 
 .mar_t12{margin-top:12px;}
 .mar_t15{margin-top:15px;}
+.mar_t16{margin-top:16px;}
 .mar_t24{margin-top:24px;}
 .mar_t32{margin-top:32px;}
 .mar_t5{margin-top:5px;}
@@ -52,11 +54,15 @@ body{margin:0px;padding:0px;}
 .mar_b24{margin-bottom:24px;}
 .mar_b32{margin-bottom:32px;}
 
+.mar_l4{margin-left:4px;}
 .mar_l24{margin-left:24px;}
 .mar_l50{margin-left:50px;}
 
 .pad_a0{padding:0px;}
 .pad_a32{padding:32px;}
+
+.pad_t8{padding-top:8px;}
+
 .pad_l48{padding-left:48px;}
 
 
@@ -66,6 +72,7 @@ body{margin:0px;padding:0px;}
 .fnt_s24{font-size:24px;}
 .fnt_s32{font-size:32px;}
 .fnt_s48{font-size:48px}
+.fnt_s56{font-size:56px}
 
 .bor_a_w1{border-width:1px;border-style: solid;}
 .bor_b_w1{border-bottom-width:1px;border-bottom-style: solid;}
@@ -208,7 +215,8 @@ details .summary_contents{
 
 
 /**************************** special *********************************************/
-
+#pre_out{width:50px;font-size:24px;}
+#your_point{padding-left:4px;width:50px;font-size:24px;}
 
 .icon_box{
     margin-bottom:24px;
@@ -223,6 +231,13 @@ details .summary_contents{
 .ctrl_btn{font-size:36px;}
 .rou_w{width:320px;}
 
+.rate_fig{width:25px;line-height:100%;}
+.rate_eq{width:30px;line-height:100%;}
+.rate_opt{width:20px;line-height:100%;}
+.rate_rate{width:30px;line-height:100%;}
+
+.slt_w{width:103px;}
+.slt_up_bt{width:157px;}
 
 /********************************** for pc? where is for tablet!! **************************/
 @media screen and (min-width:415px){

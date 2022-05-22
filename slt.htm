@@ -2,7 +2,8 @@
     <head>
         <link rel="stylesheet" href="css/fig_match.css">
         <meta name='viewport' content='width=device-width,initial-scale=1.0' />
-        <meta description="ˆê——">
+        <meta description="一覧">
+
         <script language="JavaScript">
             window.addEventListener("keydown",start1)
             var tim1="";
@@ -18,27 +19,45 @@
         
             function start1(elem1) {
         
-        
+                //console.log(elem1)
                 if(int_sts==3){
                     if(elem1.code=='ArrowRight' || elem1=='rig'){
-                        ar_proc=new Array(dat5.value,0,1,-1)
+                        ar_proc=new Array(parseInt(document.getElementById("your_point").innerText),0,1,-1)
                     }else if(elem1.code=='ArrowLeft' || elem1=='lef'){
-                        ar_proc=new Array(dat4.value,0,-1,1)
+                        ar_proc=new Array(pre_out.value,0,-1,1)
                     }else if(elem1.code=='ArrowUp' || elem1=='up'){
-                        ar_proc=new Array(dat5.value,10,10,-10)
+                        ar_proc=new Array(parseInt(document.getElementById("your_point").innerText),10,10,-10)
                     }else if(elem1.code=='ArrowDown' || elem1=='dwn'){
-                        ar_proc=new Array(dat4.value,10,-10,10)
+                        ar_proc=new Array(pre_out.value,10,-10,10)
                     }
+                    //alert("dd")
+                    //console.log(elem1)
+                    //console.log(elem1.code)
+                    //alert("rr")
                     if(ar_proc.length>0){
                         if(ar_proc[0]>=parseInt(ar_proc[1])){
-                            dat4.value=parseInt(dat4.value)+parseInt(ar_proc[2])
-                            dat5.value=parseInt(dat5.value)+parseInt(ar_proc[3])
+
+                            //console.log(document.getElementById("pre_out").value)
+                            //console.log(ar_proc[2])
+                            if(document.getElementById("pre_out").value==0 && ar_proc[2]==-1){
+
+                            }else if(document.getElementById("your_point").innerText==0 && ar_proc[2]==1){
+
+                            }else if(elem1.code=='Space' || elem1=='act'){
+
+                            }else{
+                                pre_out.value=parseInt(pre_out.value)+parseInt(ar_proc[2])
+                                document.getElementById("your_point").innerText=parseInt(document.getElementById("your_point").innerText)+parseInt(ar_proc[3])
+                            }
+                        
                         }
                     }
                 }
+                //alert("cc")
+
                 if(elem1.code=='Space' || elem1=='act'){
                     if(int_sts==3){
-                        if(dat4.value>0){
+                        if(pre_out.value>0){
                             rol1()
                         }
                     }else{
@@ -54,10 +73,12 @@
                             }else if(dat1.value==1 || dat2.value==1 || dat3.value==1){int_opt=1
                             }else if(dat1.value==0 && dat2.value==0 && dat3.value==0){int_opt=0
                                 int_sts=4
-                                alert("END")
-                            }else{int_opt=0
+                                alert("さようなら～")
+                                window.location.href = 'index.htm';
+                            }else{
+                                int_opt=0
                             }
-                            dat4.value=parseInt(dat4.value)*int_opt
+                            pre_out.value=parseInt(pre_out.value)*int_opt
                             if(int_sts!=4){
                                 ref1=setInterval(refnd,50)
                                 refnd()
@@ -68,11 +89,11 @@
             }
         
             function refnd(){
-                if(dat4.value==0){
+                if(pre_out.value==0){
                     clearInterval(ref1)
                 }else{
-                    dat4.value=parseInt(dat4.value)-1
-                    dat5.value=parseInt(dat5.value)+1
+                    pre_out.value=parseInt(pre_out.value)-1
+                    document.getElementById("your_point").innerText=parseInt(document.getElementById("your_point").innerText)+1
                 }
             }
         
@@ -98,48 +119,120 @@
         <script src="js/head_menu.js"></script>
 
 
-        <div class="cont_cont mar_l_at mar_r_at">
+        <div class="cont_cont mar_l_at mar_r_at mar_t16">
 
 
 
 
-            <div class="ov_f_hid">
+            <div class="ov_f_hid w320 mar_b16">
                 <div class="flt_lef mar_r10">
-                    1-- 1<br />
-                    11- 2<br />
-                    111 4<br />
-                    222 8<br />
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">1</div>
+                        <div class="flt_lef rate_fig">-</div>     
+                        <div class="flt_lef rate_fig">-</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">1</div>
+                    </div>
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">1</div>
+                        <div class="flt_lef rate_fig">1</div>     
+                        <div class="flt_lef rate_fig">-</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">2</div>
+                    </div>
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">1</div>
+                        <div class="flt_lef rate_fig">1</div>     
+                        <div class="flt_lef rate_fig">1</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">4</div>
+                    </div>
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">2</div>
+                        <div class="flt_lef rate_fig">2</div>     
+                        <div class="flt_lef rate_fig">2</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">8</div>
+                    </div>
                 </div>
+
                 <div class="flt_lef">
-                    333 10<br />
-                    555 15<br />
-                    777 20<br />
-                    000 ed
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">3</div>
+                        <div class="flt_lef rate_fig">3</div>     
+                        <div class="flt_lef rate_fig">3</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">10</div>
+                    </div>
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">5</div>
+                        <div class="flt_lef rate_fig">5</div>     
+                        <div class="flt_lef rate_fig">5</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">15</div>
+                    </div>
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">7</div>
+                        <div class="flt_lef rate_fig">7</div>     
+                        <div class="flt_lef rate_fig">7</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">X</div>
+                        <div class="flt_lef rate_rate">20</div>
+                    </div>
+
+                    <div class="ov_f_hid">
+                        <div class="flt_lef rate_fig">0</div>
+                        <div class="flt_lef rate_fig">0</div>     
+                        <div class="flt_lef rate_fig">0</div>
+                        <div class="flt_lef rate_eq">=</div>
+                        <div class="flt_lef rate_opt">　</div>
+                        <div class="flt_lef rate_rate">ED</div>
+                    </div>
+
                 </div>
             </div>
 
-            <div>
-                <input type="text" id="dat1" value="0" class="inp1">
-                <input type="text" id="dat2" value="0" class="inp1">
-                <input type="text" id="dat3" value="0" class="inp1"><br />
-                <input type="text" id="dat4" value="0" class="inp2">-
-                <input type="text" id="dat5" value="300" class="inp2">
+            <div class="ov_f_hid w320 mar_b16">
+                <input type="text" id="dat1" value="0" class="slt_w fnt_s56 tex_cen">
+                <input type="text" id="dat2" value="0" class="slt_w fnt_s56 tex_cen">
+                <input type="text" id="dat3" value="0" class="slt_w fnt_s56 tex_cen">
             </div>
 
-            <div class="ov_f_hid mar_b32">
-                <div class="flt_lef w40p tex_cen">
-                    <input type="button" value="▲" onclick="start1('rig')" class="w100p ctrl_btn"><br />
-                    1<br />
-                    <input type="button" value="▼" onclick="start1('lef')" class="w100p ctrl_btn">
-                </div>
 
-                <div class="flt_lef w40p tex_cen">
-                    <input type="button" value="▲" onclick="start1('up')" class="w100p ctrl_btn"><br />
-                    10<br />
-                    <input type="button" value="▼" onclick="start1('dwn')" class="w100p ctrl_btn">
-                </div>
+			<div class="ov_f_hid w320 mar_b32">
+				<div class="flt_lef">Bet
+					<input type="text" id="pre_out" value="0"><br />
+				</div>
+
+
+				<div class="flt_rig ov_f_hid">
+					<div class="flt_lef pad_t8">Your Points</div>
+					<div id="your_point" class="bor_a_w1 bor_c06 flt_lef mar_l4">0</div>
+				</div>
+			</div>
+
+
+
+
+            <div class="mar_b32 w320">
+                    <input type="button" value="▲" onclick="start1('rig')" class="slt_up_bt ctrl_btn pad_a0 shd2_9">
+                    <input type="button" value="▼" onclick="start1('lef')" class="slt_up_bt ctrl_btn pad_a0 shd2_9">
             </div>
-            <input type="button" value="●" onclick="start1('act')" class="w80p ctrl_btn">
+
+            <input type="button" value="Start/Stop" onclick="start1('act')" class="w320 ctrl_btn shd2_9">
 
         </div>
     </body>
